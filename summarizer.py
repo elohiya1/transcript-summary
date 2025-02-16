@@ -1,6 +1,7 @@
 import json
 import boto3
 import datetime
+import time
 
 # Initialize the AWS clients
 transcribe = boto3.client('transcribe')
@@ -22,7 +23,6 @@ transcribe.start_transcription_job(
 )
 
 # Wait for the job to complete
-import time
 while True:
     job = transcribe.get_transcription_job(TranscriptionJobName=job_name)
     status = job['TranscriptionJob']['TranscriptionJobStatus']
@@ -66,8 +66,8 @@ if status == "COMPLETED":
             ]
         })
     )
+
     summary = response["body"].read().decode("utf-8")
-    print("Summary:\n", summary)
     summary_text = json.loads(summary)['output']['message']['content'][0]['text']
     print("Summary text:\n", summary_text)
 
