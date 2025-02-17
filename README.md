@@ -7,7 +7,6 @@ The Call Transcript Summarizer is a project that transcribes  audio files and ge
 - **Automated Transcription**: Uses AWS Transcribe to convert speech to text.
 - **Summarization with LLM**: Leverages AWS Bedrock (Anthropic Claude) to summarize transcripts.
 - **S3 Integration**: Retrieves and processes transcript files from AWS S3.
-- **Real-time Processing**: Continuously checks job status for efficient transcription.
 
 ## Technology Stack
 - **AWS Services**: Transcribe, S3, Bedrock
@@ -28,7 +27,7 @@ The Call Transcript Summarizer is a project that transcribes  audio files and ge
 2. Update media_uri in the script with your S3 file path.
 3. Run the script:
    ```sh
-   python main.py
+   python summarizer.py
 4. Retrieve the generated summary from the console output.
 
 ## Modifications
