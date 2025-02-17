@@ -10,7 +10,7 @@ bedrock = boto3.client("bedrock-runtime")
 
 # Define job parameters
 job_name = "MyTranscriptionJob" + "-" + str(datetime.datetime.now().timestamp())
-media_uri = "s3://esha-transcribe/input/test-transcribe.m4a"  # Replace with your file's S3 URL
+media_uri = "s3://esha-transcribe/input/test-transcribe.m4a"  # Replace with your S3 bucket
 output_bucket = "esha-transcribe"  # (Optional) If you want to store the result in an S3 bucket
 
 # Start the transcription job
